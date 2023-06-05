@@ -7,6 +7,7 @@ import subprocess
 import sys
 import time
 from itertools import chain
+# from termcolor import colored
 
 connected = False
 
@@ -35,11 +36,17 @@ def ping(host, state):
         print("CONNECTED " + host)
         write_live_ip_to_file(host)
         print('Initiating connection to machine ' + host)
-        print('Establishing Connection.', end=' ')
-        # for i in range(15):
-        #     print('.')
-        #     time.sleep(1)
+        print('Establishing Connection...')
+
+        # for i in range(5):
+        #     print('.' )
+        #     time.sleep(.5)
+          
+
+
+        print()
         time.sleep(.5)
+        # print()
         try:
             state = True
             ssh_string_pass_after = f'wsl ssh west@{host} \n yes \n 1327'
